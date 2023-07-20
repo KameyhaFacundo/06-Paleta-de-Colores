@@ -1,5 +1,5 @@
 import { Form, Button, Card } from "react-bootstrap";
-// import ListaColores from "./ListaColores";
+import ListaColores from "./ListaColores";
 import { useState } from "react";
 
 const FormularioColor = () => {
@@ -10,6 +10,13 @@ const FormularioColor = () => {
     e.preventDefault();
     setColores([...colores, color]);
     e.target.reset(); // setcolor("");
+  };
+
+  const borrarColor = (colorBorrar) => {
+    let listaColoresFiltrada = colores.filter(
+      (itemColor) => itemColor !== colorBorrar
+    );
+    setColores(listaColoresFiltrada);
   };
 
   return (
@@ -32,7 +39,7 @@ const FormularioColor = () => {
         </Form>
       </Card>
       <hr className="border-1" />
-      {/* <ListaColores colores={colores} borrarColor={borrarColor}></ListaColores> */}
+      <ListaColores colores={colores} borrarColor={borrarColor}></ListaColores>
     </>
   );
 };

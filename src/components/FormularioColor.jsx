@@ -1,10 +1,16 @@
 import { Form, Button, Card } from "react-bootstrap";
-import ListaColores from "./ListaColores";
+// import ListaColores from "./ListaColores";
 import { useState } from "react";
 
 const FormularioColor = () => {
   const [color, setColor] = useState("");
   const [colores, setColores] = useState([]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setColores([...colores, color]);
+    e.target.reset(); // setcolor("");
+  };
 
   return (
     <>
@@ -12,7 +18,7 @@ const FormularioColor = () => {
         <h1 className="text-center text-dark">Administrar Colores</h1>
         <hr className=" border-1" />
 
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3 d-flex" controlId="color">
             <Form.Control
               type="text"
@@ -26,7 +32,7 @@ const FormularioColor = () => {
         </Form>
       </Card>
       <hr className="border-1" />
-      <ListaColores colores={colores}></ListaColores>
+      {/* <ListaColores colores={colores} borrarColor={borrarColor}></ListaColores> */}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { Form, Button, Card } from "react-bootstrap";
-// import ListaColores from "./ListaColores";
+import ListaColores from "./ListaColores";
 import { useState } from "react";
 
 const FormularioColor = () => {
@@ -26,7 +26,7 @@ const FormularioColor = () => {
         </Form>
       </Card>
       <hr className="border-1" />
-      {/* <ListaColores colores={colores} borrarColor={borrarColor}></ListaColores> */}
+      <ListaColores colores={colores}></ListaColores>
     </>
   );
 };

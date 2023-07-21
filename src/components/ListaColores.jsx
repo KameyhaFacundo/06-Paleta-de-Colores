@@ -3,7 +3,7 @@ import ItemColor from "./ItemColor";
 
 const ListaColores = ({ colores, borrarColor }) => {
   return (
-    <Row lg={4} md={4} sm={3} className="g-4">
+    <Row xs={1} lg={3} md={2} sm={3} xl={4} className="g-4">
       {colores.map((color, index) => (
         <Col key={index}>
           <ItemColor

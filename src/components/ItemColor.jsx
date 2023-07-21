@@ -3,7 +3,9 @@ import { ListGroup, Button, Card } from "react-bootstrap";
 const ItemColor = ({ color, borrarColor }) => {
   return (
     <Card className="mx-2 d-flex mx-1 border-1">
-      <h3 className="text-center display-9">{color}</h3>
+      <p className="text-center">
+        <strong> {color.toUpperCase()}</strong>
+      </p>
       <div
         style={{
           width: "50%",
@@ -14,11 +16,7 @@ const ItemColor = ({ color, borrarColor }) => {
           lineHeight: "200px",
         }}
       ></div>
-      <Button
-        className="m-2"
-        variant="success"
-        onClick={() => borrarColor(color)}
-      >
+      <Button className="m-2" variant="dark" onClick={() => borrarColor(color)}>
         Borrar
       </Button>
     </Card>
